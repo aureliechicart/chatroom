@@ -3,6 +3,7 @@ export const UPDATE_INPUT_MESSAGE = 'UPDATE_INPUT_MESSAGE';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const TOGGLE_SETTINGS_OPEN = 'TOGGLE_SETTINGS_OPEN';
 export const UPDATE_SETTINGS_FIELD = 'UPDATE_SETTINGS_FIELD';
+export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 
 // === action creators
 export const updateInputMessage = (newValue) => ({
@@ -22,4 +23,8 @@ export const updateSettingsField = (identifier, newValue) => ({
   type: UPDATE_SETTINGS_FIELD,
   identifier: identifier,
   newValue
+});
+
+export const submitLogin = () => ({
+  type: SUBMIT_LOGIN,
 });

@@ -12,6 +12,7 @@ const Settings = ({
   email,
   password,
   updateSettingsField,
+  submitLogin,
 }) => {
   const cssClass = classNames("settings-toggle", {
     "settings-toggle--open": open,
@@ -28,7 +29,12 @@ const Settings = ({
         +
       </button>
       {open && (
-        <form className="settings-form">
+        <form
+          cclassName="settings-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            submitLogin();
+          }}>
           <Field
             identifier="email"
             placeholder="michel@michel.michmich"
@@ -63,6 +69,7 @@ Settings.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   updateSettingsField: PropTypes.func.isRequired,
+  submitLogin: PropTypes.func.isRequired,
 };
 
 export default Settings;

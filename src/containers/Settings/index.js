@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { toggleSettingsOpen, updateSettingsField } from '../../actions/chat';
+import { toggleSettingsOpen, updateSettingsField, submitLogin } from '../../actions/chat';
 
 import Settings from '../../components/Settings';
 
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => ({
     const action = updateSettingsField(identifier, newValue);
     dispatch(action);
   },
+  submitLogin: () => {
+    dispatch(submitLogin());
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);
