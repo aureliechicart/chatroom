@@ -15,7 +15,7 @@ const initialState = {
   settingsOpen: true,
   email: "",
   password: "",
-  nickname: '',
+  nickname: null,
   loginError: null
 };
 

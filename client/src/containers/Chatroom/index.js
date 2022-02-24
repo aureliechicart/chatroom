@@ -5,6 +5,7 @@ import { connectWebsocket } from '../../actions/chat';
 import Chatroom from '../../components/Chatroom';
 
 const mapStateToProps = (state) => ({
+  nickname: state.nickname,
 });
 
 const mapDispatchToProps = (dispatch) => ({

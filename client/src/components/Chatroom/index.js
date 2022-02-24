@@ -8,7 +8,7 @@ import Settings from "../../containers/Settings/";
 
 import "./styles.scss";
 
-const Chatroom = ({ initWebsocket }) => {
+const Chatroom = ({ initWebsocket, nickname }) => {
   useEffect(() => {
     initWebsocket();
   }, []);
@@ -16,7 +16,7 @@ const Chatroom = ({ initWebsocket }) => {
   return (
     <div className="chatroom">
       <Messages />
-      <Form />
+      {nickname !== null && <Form />}
       <Settings />
     </div>
   );
@@ -24,6 +24,11 @@ const Chatroom = ({ initWebsocket }) => {
 
 Chatroom.propTypes = {
   initWebsocket: PropTypes.func.isRequired,
+  nickname: PropTypes.string,
+};
+
+Chatroom.defaultProps = {
+  nickname: "",
 };
 
 export default Chatroom;
