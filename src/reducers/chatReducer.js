@@ -1,5 +1,7 @@
 import { UPDATE_INPUT_MESSAGE, ADD_MESSAGE } from "../actions/chat";
 
+import { getHighestId } from 'src/utils';
+
 const initialState = {
   messages: [
     {
@@ -29,12 +31,14 @@ function chatReducer(state = initialState, action) {
         inputMessage: action.newValue,
       };
     case ADD_MESSAGE:
-      // for now, we hard-code an id and a username
+      const nextId = getHighestId(state.messages) + 1;
+      // for now, we hard-code the username
       const newMessage = {
-        id: 145,
+        id: nextId,
         username: 'Super Chat',
         content: state.inputMessage
       };
+      
         return {
           ...state,
           messages: [
