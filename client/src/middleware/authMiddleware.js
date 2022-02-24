@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { SUBMIT_LOGIN } from '../actions/chat';
+import { SUBMIT_LOGIN, connectUser } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -11,6 +11,8 @@ const authMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response);
+          const saveAction = connectUser(response.data.pseudo);
+          store.dispatch(saveAction);
         })
         .catch((error) => {
           console.log(error);

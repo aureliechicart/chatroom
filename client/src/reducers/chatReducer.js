@@ -3,6 +3,7 @@ import {
   ADD_MESSAGE,
   TOGGLE_SETTINGS_OPEN,
   UPDATE_SETTINGS_FIELD,
+  CONNECT_USER,
 } from "../actions/chat";
 
 import { getHighestId } from "../utils";
@@ -13,6 +14,7 @@ const initialState = {
   settingsOpen: true,
   email: "",
   password: "",
+  nickname: ''
 };
 
 function chatReducer(state = initialState, action) {
@@ -42,11 +44,16 @@ function chatReducer(state = initialState, action) {
         ...state,
         settingsOpen: !state.settingsOpen,
       };
-      case UPDATE_SETTINGS_FIELD:
-        return {
-          ...state,
-          [action.identifier]: action.newValue
-        };
+    case UPDATE_SETTINGS_FIELD:
+      return {
+        ...state,
+        [action.identifier]: action.newValue,
+      };
+    case CONNECT_USER:
+      return {
+        ...state,
+        nickname: action.nickname,
+      };
     default:
       return state;
   }
