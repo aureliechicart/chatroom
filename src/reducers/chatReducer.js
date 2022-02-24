@@ -1,6 +1,6 @@
 import { UPDATE_INPUT_MESSAGE, ADD_MESSAGE } from "../actions/chat";
 
-import { getHighestId } from 'src/utils';
+import { getHighestId } from '../utils';
 
 const initialState = {
   messages: [

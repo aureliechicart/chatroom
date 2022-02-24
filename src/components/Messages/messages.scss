@@ -1,8 +1,13 @@
 @use '../../styles/vars';
 
 .messages {
-  margin-bottom: vars.$inputHeight;
   padding: 2em;
+  position: absolute;
+  top: 0;
+  bottom: vars.$inputHeight;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
 
   .message {
     margin-bottom: 2rem;
