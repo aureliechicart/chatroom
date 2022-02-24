@@ -1,16 +1,26 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 // react-feather : light-weight library of icnons as React components
-import { Send } from 'react-feather';
+import { Send } from "react-feather";
 
-import './form.scss';
+import "./form.scss";
 
-const Form = () => (
+const Form = ({ value }) => (
   <form className="form">
-    <input type="text" className="form-input" placeholder="Saisissez votre message..." />
+    <input
+      value={value}
+      type="text"
+      className="form-input"
+      placeholder="Saisissez votre message..."
+    />
     <button type="submit" className="form-submit">
       <Send size={46} />
     </button>
   </form>
 );
+
+Form.propTypes = {
+  value: PropTypes.string.isRequired,
+};
 
 export default Form;

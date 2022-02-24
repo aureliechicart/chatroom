@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import reducer from '../reducers/chatReducer';
+import chatReducer from '../reducers/chatReducer';
 
 const store = createStore(
   // reducer
-  reducer,
+  chatReducer,
   // enhancer
   devToolsEnhancer(),
 );

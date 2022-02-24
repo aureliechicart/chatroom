@@ -16,13 +16,14 @@ const initialState = {
       content: 'Stp',
     },
   ],
+  inputMessage: 'test',
 };
 
-function nameForTheReducer(state = initialState, action) {
+function chatReducer(state = initialState, action) {
   switch (action.type) {
     default:
       return state;
   }
 }
 
-export default nameForTheReducer;
+export default chatReducer;

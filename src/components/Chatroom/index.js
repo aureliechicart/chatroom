@@ -1,5 +1,5 @@
 // == Import
-import Form from '../Form';
+import Form from '../../containers/Form';
 import Messages from '../../containers/Messages/';
 
 import './styles.scss';

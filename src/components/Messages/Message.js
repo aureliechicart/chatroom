@@ -8,4 +8,9 @@ const Message = ({content, username}) => (
   </div>
 );
 
+Message.propTypes = {
+  content: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+};
+
 export default Message;
