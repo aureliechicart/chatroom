@@ -15,8 +15,9 @@ export const updateInputMessage = (newValue) => ({
   newValue: newValue,
 });
 
-export const addMessage = () => ({
+export const addMessage = (message) => ({
   type: ADD_MESSAGE,
+  message
 });
 
 export const toggleSettingsOpen = () => ({

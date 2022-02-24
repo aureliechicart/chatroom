@@ -7,7 +7,7 @@ import {
   DISPLAY_ERROR
 } from "../actions/chat";
 
-import { getHighestId } from "../utils";
+// import { getHighestId } from "../utils";
 
 const initialState = {
   messages: [],
@@ -27,16 +27,9 @@ function chatReducer(state = initialState, action) {
         inputMessage: action.newValue,
       };
     case ADD_MESSAGE:
-      const nextId = getHighestId(state.messages) + 1;
-      const newMessage = {
-        id: nextId,
-        username: state.nickname,
-        content: state.inputMessage,
-      };
-
       return {
         ...state,
-        messages: [...state.messages, newMessage],
+        messages: [...state.messages, action.message],
         // we clear the input
         inputMessage: "",
       };

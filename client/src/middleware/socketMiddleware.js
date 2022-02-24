@@ -1,4 +1,4 @@
-import { CONNECT_WEBSOCKET, CONNECT_USER, SEND_MESSAGE } from "../actions/chat";
+import { CONNECT_WEBSOCKET, CONNECT_USER, SEND_MESSAGE, addMessage } from "../actions/chat";
 
 let socket;
 
@@ -14,6 +14,7 @@ const socketMiddleware = (store) => (next) => (action) => {
     case CONNECT_USER:
       socket.on("send_message", (message) => {
         console.log("nouveau message :", message);
+        store.dispatch(addMessage(message));
       });
       break;
     
