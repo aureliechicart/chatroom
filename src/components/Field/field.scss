@@ -1,10 +1,8 @@
+@use '../../styles/vars';
+
 .field {
   margin: 2rem 0;
   position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 3.4rem;
-  }
 
   .label {
     display: block;
@@ -17,15 +15,14 @@
   .input {
     padding: 0.8rem;
     border-radius: 5px;
-    width: 100%;
     border: 2px solid black;
     font-size: 1.2em;
 
 
     &:focus {
-      border-color: #f0f;
+      border-color: vars.$darkColor;
       & + .label {
-        color: #f0f;
+        color: vars.$darkColor;
       }
     }
   }
