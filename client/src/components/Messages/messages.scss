@@ -16,6 +16,10 @@
       padding-left: 1.2rem;
     }
 
+    &.message--own {
+      text-align: right;
+    }
+
     .message-content {
       color: vars.$messageColor;
       background-color: vars.$messageBackground;

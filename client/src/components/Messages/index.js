@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './messages.scss';
-import Message from './Message';
+import Message from '../../containers/Messages/Message';
 
 const Messages = ({ messages }) => (
   <div className="messages">
     {messages.map((message) => (
-      <Message key={message.id} {...message} />
+      <Message key={message.id} {...message}/>
     ))}
   </div>
 );
