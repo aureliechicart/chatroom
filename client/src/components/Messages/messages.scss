@@ -1,0 +1,40 @@
+@use '../../styles/vars';
+
+.messages {
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  bottom: vars.$inputHeight;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+
+  .message {
+    margin-bottom: 2rem;
+
+    .message-author {
+      padding-left: 1.2rem;
+    }
+
+    .message-content {
+      color: vars.$messageColor;
+      background-color: vars.$messageBackground;
+      padding: 1.2rem 1.3rem;
+      margin-top: 0.8rem;
+      border-radius: 1.6rem;
+      display: inline-block;
+      position: relative;
+
+      // https://css-tricks.com/snippets/css/css-triangle/
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-bottom: 20px solid vars.$messageBackground;
+        border-left: 25px solid transparent;
+        position: absolute;
+        margin-top: -1.9rem;
+      }
+    }
+  }
+}
