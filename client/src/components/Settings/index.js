@@ -13,6 +13,7 @@ const Settings = ({
   password,
   updateSettingsField,
   submitLogin,
+  loginError
 }) => {
   const cssClass = classNames("settings-toggle", {
     "settings-toggle--open": open,
@@ -54,6 +55,8 @@ const Settings = ({
             }}
             value={password}
           />
+          { loginError &&
+            <p className="login-error">{loginError}</p>}
           <button type="submit" className="settings-submit">
             Envoyer
           </button>
@@ -70,6 +73,7 @@ Settings.propTypes = {
   password: PropTypes.string.isRequired,
   updateSettingsField: PropTypes.func.isRequired,
   submitLogin: PropTypes.func.isRequired,
+  loginError: PropTypes.string
 };
 
 export default Settings;

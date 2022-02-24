@@ -4,6 +4,7 @@ import {
   TOGGLE_SETTINGS_OPEN,
   UPDATE_SETTINGS_FIELD,
   CONNECT_USER,
+  DISPLAY_ERROR
 } from "../actions/chat";
 
 import { getHighestId } from "../utils";
@@ -14,7 +15,8 @@ const initialState = {
   settingsOpen: true,
   email: "",
   password: "",
-  nickname: ''
+  nickname: '',
+  loginError: null
 };
 
 function chatReducer(state = initialState, action) {
@@ -53,7 +55,14 @@ function chatReducer(state = initialState, action) {
       return {
         ...state,
         nickname: action.nickname,
+        settingsOpen: false
       };
+  
+      case DISPLAY_ERROR:
+        return {
+          ...state,
+          loginError: action.errorMessage
+        };
     default:
       return state;
   }

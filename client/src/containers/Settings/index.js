@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
   open: state.settingsOpen,
   email: state.email,
   password: state.password,
+  loginError: state.loginError
 });
 
 const mapDispatchToProps = (dispatch) => ({

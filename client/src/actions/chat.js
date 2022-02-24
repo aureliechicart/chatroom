@@ -5,6 +5,7 @@ export const TOGGLE_SETTINGS_OPEN = 'TOGGLE_SETTINGS_OPEN';
 export const UPDATE_SETTINGS_FIELD = 'UPDATE_SETTINGS_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const CONNECT_USER = 'CONNECT_USER';
+export const DISPLAY_ERROR = 'DISPLAY_ERROR';
 
 // === action creators
 export const updateInputMessage = (newValue) => ({
@@ -33,4 +34,9 @@ export const submitLogin = () => ({
 export const connectUser = (nickname) => ({
   type: CONNECT_USER,
   nickname: nickname,
+});
+
+export const displayError = (errorMessage) => ({
+  type: DISPLAY_ERROR,
+  errorMessage: errorMessage,
 });
