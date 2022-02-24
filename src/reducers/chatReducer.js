@@ -1,4 +1,4 @@
-import { UPDATE_INPUT_MESSAGE } from "../actions/chat";
+import { UPDATE_INPUT_MESSAGE, ADD_MESSAGE } from "../actions/chat";
 
 const initialState = {
   messages: [
@@ -28,6 +28,22 @@ function chatReducer(state = initialState, action) {
         ...state,
         inputMessage: action.newValue,
       };
+    case ADD_MESSAGE:
+      // for now, we hard-code an id and a username
+      const newMessage = {
+        id: 145,
+        username: 'Super Chat',
+        content: state.inputMessage
+      };
+        return {
+          ...state,
+          messages: [
+            ...state.messages,
+            newMessage
+          ],
+          // we clear the input
+          inputMessage: ''
+        };
     default:
       return state;
   }

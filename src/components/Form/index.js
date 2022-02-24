@@ -5,8 +5,11 @@ import { Send } from "react-feather";
 
 import "./form.scss";
 
-const Form = ({ value, setValue }) => (
-  <form className="form">
+const Form = ({ value, setValue, handleSubmit }) => (
+  <form className="form" onSubmit={(event) => {
+    event.preventDefault();
+    handleSubmit();
+  }}>
     <input
       value={value}
       type="text"
@@ -25,6 +28,7 @@ const Form = ({ value, setValue }) => (
 Form.propTypes = {
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
 
 export default Form;
