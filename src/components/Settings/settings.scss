@@ -16,8 +16,11 @@
     height: 30px;
     border-radius: 50%;
     font-size: 1.8rem;
-    transform: rotate(45deg);
     line-height: 30px;
+
+    &.settings-toggle--open {
+      transform: rotate(45deg);
+    }
   }
 
   .settings-form {

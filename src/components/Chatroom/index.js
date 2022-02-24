@@ -1,7 +1,7 @@
 // == Import
 import Form from '../../containers/Form';
 import Messages from '../../containers/Messages/';
-import Settings from '../../components/Settings/';
+import Settings from '../../containers/Settings/';
 
 import './styles.scss';
 

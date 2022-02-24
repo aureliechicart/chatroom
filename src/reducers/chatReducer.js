@@ -1,26 +1,11 @@
-import { UPDATE_INPUT_MESSAGE, ADD_MESSAGE } from "../actions/chat";
+import { UPDATE_INPUT_MESSAGE, ADD_MESSAGE, TOGGLE_SETTINGS_OPEN } from "../actions/chat";
 
 import { getHighestId } from '../utils';
 
 const initialState = {
-  messages: [
-    {
-      id: 1,
-      username: "Super Chat",
-      content: "Salut ça va ?",
-    },
-    {
-      id: 2,
-      username: "Super Chat",
-      content: "T'as pas des super croquettes ?",
-    },
-    {
-      id: 3,
-      username: "Super Chat",
-      content: "Stp",
-    },
-  ],
+  messages: [],
   inputMessage: "",
+  settingsOpen: true
 };
 
 function chatReducer(state = initialState, action) {
@@ -48,6 +33,11 @@ function chatReducer(state = initialState, action) {
           // we clear the input
           inputMessage: ''
         };
+        case TOGGLE_SETTINGS_OPEN:
+          return {
+            ...state,
+            settingsOpen: !state.settingsOpen,
+          };
     default:
       return state;
   }
