@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 
 import "./styles/index.scss";
-import Chatroom from "./components/Chatroom";
+import Chatroom from "./containers/Chatroom";
 
 ReactDOM.render(
   <React.StrictMode>

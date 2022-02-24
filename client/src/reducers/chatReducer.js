@@ -28,10 +28,9 @@ function chatReducer(state = initialState, action) {
       };
     case ADD_MESSAGE:
       const nextId = getHighestId(state.messages) + 1;
-      // for now, we hard-code the username
       const newMessage = {
         id: nextId,
-        username: "Super Chat",
+        username: state.nickname,
         content: state.inputMessage,
       };
 

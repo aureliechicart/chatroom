@@ -1,18 +1,29 @@
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+
 // == Import
-import Form from '../../containers/Form';
-import Messages from '../../containers/Messages/';
-import Settings from '../../containers/Settings/';
+import Form from "../../containers/Form";
+import Messages from "../../containers/Messages/";
+import Settings from "../../containers/Settings/";
 
-import './styles.scss';
+import "./styles.scss";
 
-const Chatroom = () => {
+const Chatroom = ({ initWebsocket }) => {
+  useEffect(() => {
+    initWebsocket();
+  }, []);
+
   return (
     <div className="chatroom">
-    <Messages />
+      <Messages />
       <Form />
       <Settings />
-  </div>
+    </div>
   );
-}
+};
+
+Chatroom.propTypes = {
+  initWebsocket: PropTypes.func.isRequired,
+};
 
 export default Chatroom;
