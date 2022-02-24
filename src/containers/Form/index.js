@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import { updateInputMessage } from '../../actions/chat';
+
 import Form from '../../components/Form';
 
 const mapStateToProps = (state) => ({
@@ -7,6 +9,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  setValue: (newValue) => {
+    const action = updateInputMessage(newValue);
+    dispatch(action);
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
