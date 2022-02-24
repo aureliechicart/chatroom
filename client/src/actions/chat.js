@@ -7,6 +7,7 @@ export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const CONNECT_USER = 'CONNECT_USER';
 export const DISPLAY_ERROR = 'DISPLAY_ERROR';
 export const CONNECT_WEBSOCKET = 'CONNECT_WEBSOCKET';
+export const SEND_MESSAGE = 'SEND_MESSAGE';
 
 // === action creators
 export const updateInputMessage = (newValue) => ({
@@ -44,4 +45,8 @@ export const displayError = (errorMessage) => ({
 
 export const connectWebsocket = () => ({
   type: CONNECT_WEBSOCKET,
+});
+
+export const sendMessage = () => ({
+  type: SEND_MESSAGE,
 });

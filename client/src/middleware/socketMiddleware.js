@@ -1,4 +1,4 @@
-import { CONNECT_WEBSOCKET, CONNECT_USER } from "../actions/chat";
+import { CONNECT_WEBSOCKET, CONNECT_USER, SEND_MESSAGE } from "../actions/chat";
 
 let socket;
 
@@ -16,6 +16,15 @@ const socketMiddleware = (store) => (next) => (action) => {
         console.log("nouveau message :", message);
       });
       break;
+    
+    case SEND_MESSAGE:
+      // we send a 'send_message' event on the websocket
+      // we pass the new message info
+        socket.emit('send_message', {
+          username: store.getState().nickname,
+          content: store.getState().inputMessage,
+        });
+        break;
 
     default:
   }

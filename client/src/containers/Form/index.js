@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { updateInputMessage, addMessage } from '../../actions/chat';
+import { updateInputMessage, sendMessage } from '../../actions/chat';
 
 import Form from '../../components/Form';
 
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   handleSubmit: () => {
-    dispatch(addMessage());
+    dispatch(sendMessage());
   }
 });
 
