@@ -15,21 +15,23 @@ const Settings = ({
   submitLogin,
   loginError
 }) => {
-  const cssClass = classNames("settings-toggle", {
-    "settings-toggle--open": open,
+  const cssClassButton = classNames('settings-toggle', {
+    'settings-toggle--open': open,
+  });
+  const cssClassDiv = classNames('settings', {
+    'settings-open': open,
   });
 
   return (
-    <div className="settings">
+    <div className={cssClassDiv}>
       <button
-        className={cssClass}
+        className={cssClassButton}
         type="button"
         onClick={() => {
           toggleOpen();
         }}>
         +
       </button>
-      {open && (
         <form
           className="settings-form"
           onSubmit={(event) => {
@@ -61,7 +63,6 @@ const Settings = ({
             Envoyer
           </button>
         </form>
-      )}
     </div>
   );
 };

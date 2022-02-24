@@ -13,15 +13,17 @@
   }
 
   .input {
-    padding: 0.8rem;
+    padding: 0.5rem;
     border-radius: 5px;
+    width: 90%;
     border: 2px solid black;
     font-size: 1.2em;
 
 
     &:focus {
       border-color: vars.$darkColor;
-      & + .label {
+
+      &+.label {
         color: vars.$darkColor;
       }
     }

@@ -3,10 +3,15 @@
 .settings {
   position: fixed;
   top: 1em;
-  right: 2em;
+  right: -255px;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 0.8rem;
   display: flex;
+  transition: right 0.8s;
+
+  &.settings-open {
+    right: 2em;
+  }
 
   .settings-toggle {
     background-color: #fff;
@@ -17,6 +22,8 @@
     border-radius: 50%;
     font-size: 1.8rem;
     line-height: 30px;
+    transform: rotate(0deg);
+    transition: transform 0.8s;
 
     &.settings-toggle--open {
       transform: rotate(45deg);
@@ -29,6 +36,7 @@
     margin-left: 0.8em;
     display: flex;
     flex-direction: column;
+    width: 240px;
 
     .login-error {
       background-color: vars.$errorColor;
