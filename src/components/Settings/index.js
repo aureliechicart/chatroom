@@ -6,7 +6,13 @@ import Field from "../Field/";
 
 import "./settings.scss";
 
-const Settings = ({ open, toggleOpen }) => {
+const Settings = ({
+  open,
+  toggleOpen,
+  email,
+  password,
+  updateSettingsField,
+}) => {
   const cssClass = classNames("settings-toggle", {
     "settings-toggle--open": open,
   });
@@ -28,10 +34,9 @@ const Settings = ({ open, toggleOpen }) => {
             placeholder="michel@michel.michmich"
             label="Adresse e-mail"
             changeField={(identifier, newValue) => {
-              console.log(
-                `Nouvelle valeur '${newValue}' pour le champ '${identifier}'`
-              );
+              updateSettingsField(identifier, newValue);
             }}
+            value={email}
           />
           <Field
             identifier="password"
@@ -39,10 +44,9 @@ const Settings = ({ open, toggleOpen }) => {
             label="Mot de passe"
             type="password"
             changeField={(identifier, newValue) => {
-              console.log(
-                `Nouvelle valeur '${newValue}' pour le champ '${identifier}'`
-              );
+              updateSettingsField(identifier, newValue);
             }}
+            value={password}
           />
           <button type="submit" className="settings-submit">
             Envoyer
@@ -56,6 +60,9 @@ const Settings = ({ open, toggleOpen }) => {
 Settings.propTypes = {
   open: PropTypes.bool.isRequired,
   toggleOpen: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  updateSettingsField: PropTypes.func.isRequired,
 };
 
 export default Settings;
