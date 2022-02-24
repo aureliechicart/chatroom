@@ -1,6 +1,6 @@
 // == Import
 import Form from '../Form';
-import Messages from '../Messages/index.js';
+import Messages from '../../containers/Messages/';
 
 import './styles.scss';
 

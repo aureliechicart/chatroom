@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Message = () => (
+const Message = ({content, username}) => (
   <div className="message">
-    <div className="message-author">Super Chat</div>
-    <div className="message-content">T'as pas des super croquettes ?</div>
+    <div className="message-author">{username}</div>
+    <div className="message-content">{content}</div>
   </div>
 );
 
