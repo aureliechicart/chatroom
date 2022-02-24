@@ -16,7 +16,7 @@ const initialState = {
   email: "",
   password: "",
   nickname: null,
-  loginError: null
+  loginError: null,
 };
 
 function chatReducer(state = initialState, action) {

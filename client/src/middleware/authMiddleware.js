@@ -10,7 +10,6 @@ const authMiddleware = (store) => (next) => (action) => {
         password: store.getState().password,
       })
         .then((response) => {
-          console.log(response);
           const saveAction = connectUser(response.data.pseudo);
           store.dispatch(saveAction);
         })

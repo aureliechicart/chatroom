@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Message = ({ content, username, nickname }) => {
+const Message = ({ content, username, isOwn }) => {
   const cssClass = classNames('message', {
-    'message--own': username === nickname,
+    'message--own': isOwn,
   });
 
   return (
@@ -18,7 +18,7 @@ const Message = ({ content, username, nickname }) => {
 Message.propTypes = {
   content: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  nickname: PropTypes.string.isRequired,
+  isOwn: PropTypes.bool.isRequired,
 };
 
 export default Message;

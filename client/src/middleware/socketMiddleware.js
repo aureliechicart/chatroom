@@ -7,7 +7,6 @@ const socketMiddleware = (store) => (next) => (action) => {
     case CONNECT_WEBSOCKET:
       // proxy defined in package.json to redirect any unknow requests to our API server
       socket = window.io("/");
-      console.log(socket);
       console.log("websocket créé !");
       break;
 
