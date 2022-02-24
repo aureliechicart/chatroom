@@ -7,7 +7,7 @@
   right: 0;
 
   .form-input {
-    height: vars.$inputHeight;
+    height: calc(vars.$inputHeight - 2rem);
     width: 70%;
     padding: 1rem;
     font-size: 1.2rem;
@@ -17,7 +17,7 @@
 
   .form-submit {
     position: absolute;
-    right: 0;
+    text-align: center;
     border: none;
     height: vars.$inputHeight;
     width: vars.$inputHeight;
