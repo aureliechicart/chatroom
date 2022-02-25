@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Chatroom :question::grey_exclamation:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction 📝
 
-## Available Scripts
+This project has been developed for learning purposes.  
+Simplistic real-time chat application.  
+React front-end + Node server integrating socket.io.
 
-In the project directory, you can run:
+## Project details 🔍
 
-### `npm start`
+## Stack :wrench:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* NodeJS v16.14.0
+* Express v4.17.3
+* socket.io v4.4.1
+* body-parser v1.19.2
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Bootstrapped with create-react-app v5.0.0
+* React v17.0.2
+* React DOM v17.0.2
+* React Redux v7.2.6
+* axios v 0.26.0
+* Sass v1.49.8
+* React-feather v2.0.9
+* classnames v2.3.1
 
-### `npm run build`
+### Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The server accepts three hard-coded users ([click here to access the credentials](server/server.md)).
+Once the user is logged in, the message input appears. You can log in as two different users in different browser tabs and have them exchanging messages instantaneously.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Learning goals
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* installing Socket.io in a NodeJS project
+* developing a frontend using React + Redux
+* setting up authentication and conditional views based on authenticated state
+* using websockets with socket.io
+* using a Redux middleware to connect to websockets, send and receive messages
 
-### `npm run eject`
+## Install :construction_worker:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository locally.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone <repo_url>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Access the *client* folder and install the dependencies.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cd client/ && npm i
+```
 
-## Learn More
+Once the operation is completed, access the root and install the npm packages.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd ../ && npm i
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the app :rocket:
 
-### Code Splitting
+This is a monorepo containg both the frontend project (client folder) and the backend project (server folder).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To launch the backend server:
 
-### Analyzing the Bundle Size
+```bash
+cd server && npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To launch the webpack server, open a different terminal and run the following command (make sure you are at the root of the project):
 
-### Making a Progressive Web App
+```bash
+cd client && npm start 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.

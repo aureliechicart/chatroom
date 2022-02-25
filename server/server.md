@@ -6,7 +6,7 @@
 Routes:
 - `POST http://localhost:3001/login`
 
-    => provide an object containing email and password, for example 
+    => provide an object containing email and password, for example
     ```
     {
         email: 'bouclierman@herocorp.io',
